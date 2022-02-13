@@ -41,8 +41,6 @@
     if (word.length === 5) {
       if (isInDictionary(word)) {
         $input = ''
-
-        // find correct letters and add them to arrays
         if (word === $correctWord) {
           $guesses.push(word)
           $history.push({
@@ -57,13 +55,10 @@
           $guessedLetters = ""
         } else {
           $guessedLetters = $guessedLetters.concat(word)
-          // for each letter in the word
           for (let i = 0; i < word.length; i++) {
-            // if the letter is in the knownLetterPlacement
             if ($correctWord.includes(word[i])) {
               $knownLetterExist = $knownLetterExist.concat(word[i])
               if (word[i] === $correctWord[i]) {
-                // add the letter to the knownLetterPlacement
                 $knownLetterPlacement = $knownLetterPlacement.concat(word[i])
               }
             }
