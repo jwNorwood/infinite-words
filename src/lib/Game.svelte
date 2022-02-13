@@ -31,7 +31,7 @@
       $input = $input.slice(0, -1)
     } else if (event.key === 'Enter') {
       handleSubmit($input)
-    } else if ($input.length < 5) {
+    } else if ($input.length < 5 && event.key.length === 1) {
       $input += event.key
     }
   }
