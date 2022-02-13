@@ -1,6 +1,5 @@
 <script lang="ts">
   export let handleSubmit
-  
   import { theme } from '../../stores/store'
   $: dark = $theme === 'dark'
 </script>
