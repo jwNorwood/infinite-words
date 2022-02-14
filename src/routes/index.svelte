@@ -9,9 +9,9 @@
 </script>
 
 <Meta
-  description="A simple Svelte component to toggle between dark and light theme."
-  title="Toggle Theme"
-  keywords="account, create account, free poker"
+  description="Wordle clone with unlimited attempts and unlimited words, with a dark mode that is easy on your eyes. Based on the popular daily word guessing game game."
+  title="Wordle Infinite"
+  keywords="casual game, word game, wordle"
   image=""
 />
 
