@@ -30,19 +30,18 @@
     if (event.key === 'Backspace') {
       $input = $input.slice(0, -1)
     } else if (event.key === 'Enter') {
-      handleSubmit($input)
+      handleSubmit()
     } else if ($input.length < 5 && event.key.length === 1) {
       $input += event.key
     }
   }
 
-  const handleSubmit = word => {
+  const handleSubmit = () => {
     error = ''
-    if (word.length === 5) {
-      if (isInDictionary(word)) {
-        $input = ''
-        if (word === $correctWord) {
-          $guesses.push(word)
+    if ($input.length === 5) {
+      if (isInDictionary($input)) {
+        if ($input === $correctWord) {
+          $guesses.push($input)
           $history.push({
             guesses: $guesses,
             correctWord: $correctWord
@@ -54,23 +53,24 @@
           $knownLetterPlacement = []
           $guessedLetters = ""
         } else {
-          $guessedLetters = $guessedLetters.concat(word)
-          for (let i = 0; i < word.length; i++) {
-            if ($correctWord.includes(word[i])) {
-              $knownLetterExist = $knownLetterExist.concat(word[i])
-              if (word[i] === $correctWord[i]) {
-                $knownLetterPlacement = $knownLetterPlacement.concat(word[i])
+          $guessedLetters = $guessedLetters.concat($input)
+          for (let i = 0; i < $input.length; i++) {
+            if ($correctWord.includes($input[i])) {
+              $knownLetterExist = $knownLetterExist.concat($input[i])
+              if ($input[i] === $correctWord[i]) {
+                $knownLetterPlacement = $knownLetterPlacement.concat($input[i])
               }
             }
           }
-          $guesses.push(word)
+          $guesses.push($input)
           $guesses = $guesses
         }
+        $input = ''
       } else {
         error = 'not a word'
       }
     } else {
-      error = 'word is not long enough'
+      error = `${$input} is not long enough`
     }
   }
 </script>
