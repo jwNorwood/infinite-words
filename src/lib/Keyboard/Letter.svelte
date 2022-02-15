@@ -27,7 +27,7 @@
 
 <style lang="postcss">
   .letter {
-    @apply bg-gray-100 w-10 h-10 rounded-md flex items-center justify-center m-1 capitalize font-bold;
+    @apply bg-gray-100 w-8 h-10 rounded-md flex items-center justify-center m-1 capitalize font-bold;
   }
   .dark.letter {
     @apply bg-gray-700;

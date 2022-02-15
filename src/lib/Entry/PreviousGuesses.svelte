@@ -7,11 +7,11 @@
 
 
 {#if !!lastCorrectWord}
-  <Guess input={lastCorrectWord} previous correctWord={lastCorrectWord} />
+  <Guess input={lastCorrectWord} correctWord={lastCorrectWord} />
 {/if}
 
 {#each $guesses as guess}
-  <Guess input={guess} correctWord={$correctWord} previous />
+  <Guess input={guess} correctWord={$correctWord} />
 {/each}
  
 <style lang="postcss">
