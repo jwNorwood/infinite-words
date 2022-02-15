@@ -9,25 +9,18 @@
   let incorrect = false
   $: dark = $theme === 'dark'
 
-  const updateClasses = word => {
-    correct = false
-    misplaced = false
-    incorrect = false
 
-    for (let i = 0; i < word.length; i++) {
-      if (word[i] === letter) {
-        if (i === index) {
-          correct = true
-        } else {
-          misplaced = true
-        }
-      } else if (!word.includes(letter)) {
-        incorrect = true
+  for (let i = 0; i < correctWord.length; i++) {
+    if (correctWord[i] === letter) {
+      if (i === index) {
+        correct = true
+      } else {
+        misplaced = true
       }
+    } else if (!correctWord.includes(letter)) {
+      incorrect = true
     }
   }
-
-  $: letter, updateClasses(correctWord)
 </script>
 
 <div class="letter" class:correct class:misplaced class:incorrect class:dark>
